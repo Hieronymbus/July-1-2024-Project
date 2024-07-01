@@ -7,11 +7,16 @@
     <link rel="stylesheet" href="style.css">
     <script src="app.js" async></script>
 </head>
-<body class="container">
-        <header class="header">
-        
+<body id="bodyContainer" class="container">
+        <header id="mainHeader" class="header">
+            <div>
+                <h2 id="dateTracker">date</h2>
+                <p id="tasksTracker">active tasks</p>
+            </div>
+            <h1 class="main-title">To Do List</h1>
+            <img src="assets/setting.png" alt="Settings Icon">    
         </header>
-        <section class="main-cont">
+        <section id="mainSectionList" class="main-cont">
             <div class="input-group">
                 <input type="text" class="input">
                 <button></button>
@@ -22,8 +27,12 @@
 
                     </div>
                     <div class="float-end">
-                        <button></button>
-                        <button></button>
+                        <button>
+                            <img src="assets/trash-bin.png" alt="Bin icon">
+                        </button>
+                        <button>
+                            <img src="assets/edit.png" alt="Edit icon">
+                        </button>
                     </div>
                 </div>
             </div>  

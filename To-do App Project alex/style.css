@@ -88,7 +88,11 @@
   border-radius: 10px;
   width: 20%;
 }
-
+img {
+  width: 16px;
+  height: 16px;
+  filter: invert(63%) sepia(26%) saturate(3487%) hue-rotate(151deg) brightness(97%) contrast(89%);
+}
 .header {
   width: 100%;
   display: flex;
