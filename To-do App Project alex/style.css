@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: #172a3a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+.list-group-item {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  border-bottom: 1px solid #51e5ff;
+  padding: 15px;
+}
+
+.list-group-item:last-child {
+  border-bottom: none;
+}
+
+.list-group-item .lead {
+  font-weight: bold;
+}
+
+.float-end {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.float-end button {
+  color: #51e5ff;
+  border: none;
+  background-color: grey;
+  padding: 10px;
+  width: fit-content;
+  border-radius: 50%;
+}
+
+.list-group {
+  padding: 15px;
+  border: 1px solid #51e5ff;
+  border-radius: 10px;
+  color: #fff;
+  width: 100%;
+  max-width: 800px;
+}
+
+.main-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.main-cont > span {
+  color: #fff;
+}
+
+.input-group {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+#todo-form {
+  width: 100%;
+}
+
+.input-group input {
+  padding: 12px;
+  background-color: #51e5ff;
+  border: none;
+  border-radius: 10px;
+  width: 50%;
+}
+
+.input-group button {
+  padding: 12px;
+  background-color: #51e5ff;
+  border: none;
+  border-radius: 10px;
+  width: 20%;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 5%;
+  box-shadow: 0 2px 0 #000;
+  color: #51e5ff;
+}
+
+.col-xs-12 {
+  width: 100%;
+}
+
+section,
+.row {
+  width: 65%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  min-width: fit-content;
+}
+
+.invisible {
+  display: none;
+}
+
+.d-none {
+  display: none;
+}
