@@ -205,14 +205,31 @@ function handleSortByDateOldNew(){
 //searchBy
 
 function handleSearchByTitle(){
-    console.log("test")
-    let taskSearchedFor = tasksArr.find(task => task.taskTitle.toLowerCase() === searchTitleInput.value.toLowerCase())
+    console.log("test");
+    let taskSearchedFor = tasksArr.find(task => task.taskTitle.toLowerCase() === searchTitleInput.value.toLowerCase());
     listItemsContainer.innerHTML = "";
-    updateHTML(taskSearchedFor)
+    updateHTML(taskSearchedFor);
 };
 
-function handleSearchByDate(){
+function getCurrentDateFormatted(currentDate) {
     
+    let year = currentDate.getFullYear();
+    let month = ('0' + (currentDate.getMonth() + 1)).slice(-2); 
+    let day = ('0' + currentDate.getDate()).slice(-2);
+
+    let formattedDate = `${year}-${month}-${day}`;
+
+    return formattedDate;
+}
+
+function handleSearchByDate(){
+    console.log("test");
+    console.log(searchDateInput.value)
+    let taskSearchedForArr = tasksArr.filter(task => getCurrentDateFormatted(task.dateCreated) === searchDateInput.value);
+    listItemsContainer.innerHTML = "";
+    taskSearchedForArr.forEach((task)=>{
+        updateHTML(task) 
+    });
 };
 
 //reset
