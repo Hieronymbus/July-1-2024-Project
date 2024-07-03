@@ -14,40 +14,37 @@
                 <p id="tasksTracker"> 0 active tasks</p>
             </div>
             <h1 class="main-title">To Do List</h1>
-            <img src="assets/setting.png" alt="Settings Icon">    
+            <img id="filterMenuButton" class="filterMenuDropDown" src="assets/setting.png" alt="Settings Icon">    
         </header>
         <section id="mainSectionList" class="main-cont">
             <div class="input-group">
-                <input id="newItemInputTitle" class="input-title" type="text">
-                <input id="newItemInput" type="text" class="input">
+                <input id="newItemInputTitle" class="input-title" type="text" placeholder="Enter Title here..">
+                <input id="newItemInput" class="input" type="text" placeholder="Enter Task here..">
                 <button id="addNewItemButton" class="addItems-button">Add</button>   
-            </div>
-            <div>
-                <h2>sort</h2>
-                <h3>sort by title</h3>
-                <input type="text">
-                <button>asd</button>
-                <h3>sort by date</h3>
-                <input type="text">
-            </div>
-            <div>
-                <h2>search</h2>
-                <h3>sort by title</h3>
-                <input type="text">
-                <button>asd</button>
-                <h3>sort by date</h3>
-                <input type="text">
-            </div>
-            <div>
-                <h2>filter</h2>
-                <h3>sort by title</h3>
-                <input type="text">
-                <button>asd</button>
-                <h3>sort by date</h3>
-                <input type="text">
             </div>
             <div id="listGroup" class="list-group">
             </div>  
-        </section>   
+        </section>  
+        <div id="FiltersContainer" class="dropDown invisible ">
+            <div class="filters">
+                <h2>Sort</h2>
+                <h3>- Alphabeticaly</h3>
+                <button id="sortAZButton">Sort A-Z</button>
+                <button id="sortZAButton">Sort Z-A</button>
+                <h3>- Date of Creation</h3>
+                <button id="sortDateButton">Sort New-Old</button>
+                <button id="sortDateButton">Sort Old-New</button>
+            </div>
+            <div class="filters">
+                <h2>Search</h2>
+                <h3>- Search by title</h3>
+                <input id="inputSearchTitle" type="text">
+                <button id="buttonSearchTitle">Search</button>
+                <h3>- Search by date</h3>
+                <input id="inputSearchDate" type="text">
+                <button id="buttonSearchDate">Search</button>
+            </div>
+            <button id="buttonReset" class="reset">RESET</button>
+        </div> 
 </body>
 </html>

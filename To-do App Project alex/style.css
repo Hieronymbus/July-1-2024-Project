@@ -12,7 +12,7 @@
   width: 100%;
   gap: 20px;
   font-family: Arial, Helvetica, sans-serif;
-  height: 100vh;
+  
 }
 .list-group-item {
   display: flex;
@@ -55,9 +55,7 @@
   color: #fff;
   width: 100%;
   max-width: 800px;
-  max-height: 50vh;
-  overflow-y: auto;
-  
+  margin-bottom: 5vh;
 }
 
 .main-cont {
@@ -74,6 +72,7 @@
 .input-group {
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   gap: 10px;
 }
@@ -87,7 +86,7 @@
   background-color: #51e5ff;
   border: none;
   border-radius: 10px;
-  width: 50%;
+  width: 100%;
 }
 .input-title{
   width: 20%;
@@ -141,6 +140,26 @@ section,
 
 input {
   min-width: fit-content;
+}
+
+.dropDown {
+  position: absolute;
+  right: 1%;
+  top:10%;
+  background-color: #51e5ff;
+  border-radius: 10px ;
+  padding: 10px;
+  box-shadow: 0 0 10px black; 
+}
+.filters{
+  margin-bottom: 30px;
+  padding-bottom:5px;
+  border-bottom: 2px solid #172a3a;
+}
+.reset{
+  margin: 33.3%;
+  padding: 5px;
+  
 }
 
 .invisible {
