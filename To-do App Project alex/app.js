@@ -117,10 +117,9 @@ function handleEditListItem(event){
     
     let editButtons = document.querySelectorAll(".editButton")
     editButtons.forEach(button=>{
-        button.onclick = null
+        button.onclick = null;
     })
 };
-
 function handleEditPrint(event){
     event = event || window.event;
     let thisTask = event.target.closest("div").parentElement.children[0].children[0].children[1]
@@ -131,7 +130,20 @@ function handleEditPrint(event){
     editButtons.forEach(button=>{
         button.onclick = handleEditListItem
     });
+    //update array value of task, broken need fix
+    let idToFind = event.target.closest("div").parentElement.id
+    let taskInArrayIndex = tasksArr.findIndex(task => task.id === parseInt(idToFind))
+    tasksArr[taskInArrayIndex].taskItself == editedText.value
+    console.log(tasksArr[taskInArrayIndex])
 
+
+    // cannot edit two seperate notes at same time.
+    // unles you begin edit, then create a new note and click edit on the new note.
+    // if you do this now you can edit both. 
+    // but if you click on finish edit for one of them, 
+    // and then click on edit note again on the one still being edited it fills in finish edit for some reason
+    // clicking delete on another task reloads dom and wipes any edits if you havent finished them
+    
 };
 
 ///Filter Functions///
@@ -206,9 +218,11 @@ function handleSortByDateOldNew(){
 
 function handleSearchByTitle(){
     console.log("test");
-    let taskSearchedFor = tasksArr.find(task => task.taskTitle.toLowerCase() === searchTitleInput.value.toLowerCase());
+    let taskSearchedForArr = tasksArr.filter(task => task.taskTitle.toLowerCase() === searchTitleInput.value.toLowerCase());
     listItemsContainer.innerHTML = "";
-    updateHTML(taskSearchedFor);
+    taskSearchedForArr.forEach((task)=>{
+        updateHTML(task) 
+    });
 };
 
 function getCurrentDateFormatted(currentDate) {
