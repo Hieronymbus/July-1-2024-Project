@@ -10,10 +10,10 @@ const sortAlphabeticalyAZ = document.querySelector("#sortAZButton");
 const sortAlphabeticalyZA = document.querySelector("#sortZAButton");
 const sortByDateNewOld = document.querySelector("#sortDateButtonNewOld");
 const sortByDateOldNew = document.querySelector("#sortDateButtonOldNew");
-const searchDateInput = document.querySelector("#inputSearchTitle");
-const searchDateButton = document.querySelector("#buttonSearchTitle");
-const searchTitleInput = document.querySelector("#inputSearchDate");
-const searchTitleButton = document.querySelector("#buttonSearchDate");
+const searchTitleInput = document.querySelector("#inputSearchTitle");
+const searchTitleButton = document.querySelector("#buttonSearchTitle");
+const searchDateInput = document.querySelector("#inputSearchDate");
+const searchDateButton = document.querySelector("#buttonSearchDate");
 const resetFiltersButton = document.querySelector("#buttonReset");
 
 
@@ -29,6 +29,9 @@ sortAlphabeticalyZA.addEventListener("click", handleSortAlphabeticalyZA);
 sortByDateNewOld.addEventListener("click", handleSortByDateNewOld);
 sortByDateOldNew.addEventListener("click", handleSortByDateOldNew);
 resetFiltersButton.addEventListener("click", handleResetFitlers);
+searchTitleButton.addEventListener("click", handleSearchByTitle);
+searchDateButton.addEventListener("click", handleSearchByDate)
+
 
 function getOrdinalSuffix(day) {
     if (day > 3 && day < 21) return 'th'; 
@@ -69,7 +72,7 @@ function updateHTML(task){
                             <button onClick="handleDeleteListItem(event)">
                                 <img src="assets/trash-bin.png" alt="Bin icon">
                             </button>
-                            <button onClick="handleEditListItem(event)">
+                            <button class="editButton" onClick="handleEditListItem(event)">
                                 <img src="assets/edit.png" alt="Edit icon">
                             </button>
                         </div>
@@ -112,14 +115,23 @@ function handleEditListItem(event){
     let theText = thisTask.textContent
     thisTask.innerHTML = `<input id="taskEditor" class="task-editor" value="${theText}"><button onclick="handleEditPrint()">Finish Edit</button>`
     
-
+    let editButtons = document.querySelectorAll(".editButton")
+    editButtons.forEach(button=>{
+        button.onclick = null
+    })
 };
 
 function handleEditPrint(event){
     event = event || window.event;
     let thisTask = event.target.closest("div").parentElement.children[0].children[0].children[1]
-    let editedText = document.querySelector("#taskEditor")
-    thisTask.innerHTML = `<span>${editedText.value}</span>`
+    let editedText = document.querySelector("#taskEditor");
+    thisTask.innerHTML = `<span>${editedText.value}</span>`;
+    
+    let editButtons = document.querySelectorAll(".editButton")
+    editButtons.forEach(button=>{
+        button.onclick = handleEditListItem
+    });
+
 };
 
 ///Filter Functions///
@@ -193,11 +205,14 @@ function handleSortByDateOldNew(){
 //searchBy
 
 function handleSearchByTitle(){
-
+    console.log("test")
+    let taskSearchedFor = tasksArr.find(task => task.taskTitle.toLowerCase() === searchTitleInput.value.toLowerCase())
+    listItemsContainer.innerHTML = "";
+    updateHTML(taskSearchedFor)
 };
 
 function handleSearchByDate(){
-
+    
 };
 
 //reset
