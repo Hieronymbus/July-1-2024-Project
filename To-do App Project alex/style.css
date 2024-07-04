@@ -27,7 +27,6 @@
 }
 
 .list-group-item .lead {
-  font-weight: bold;
   width: 80%;
 }
 
@@ -100,8 +99,8 @@
   width: 100%;
   
 }
-bold {
- font-size: 25px;
+strong {
+ font-size: 20px;
 }
 
 .input-group button {
@@ -117,7 +116,14 @@ img {
   height: 16px;
   filter: invert(63%) sepia(26%) saturate(3487%) hue-rotate(151deg) brightness(97%) contrast(89%);
 }
-
+.filterMenuDropDown{
+  background-color: #172a3a;
+  border: none;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+}
 .header {
   width: 100%;
   display: flex;
@@ -147,20 +153,38 @@ input {
   position: absolute;
   right: 1%;
   top:10%;
-  background-color: #51e5ff;
+  background-color:#172a3a;
   border-radius: 10px ;
   padding: 10px;
-  box-shadow: 0px 0px 40px black; 
+  box-shadow: 0px 0px 5px #51e5ff; 
+  color: #51e5ff;
+}
+h2, h3{
+  margin: 5px;
 }
 .filters{
   margin-bottom: 30px;
-  padding-bottom:5px;
-  border-bottom: 2px solid #172a3a;
+  padding-bottom:10px;
+  border-bottom: 2px solid #51e5ff;
+}
+.dropDownInput{
+  color: #172a3a;
+  background-color: #51e5ff;
+  padding: 5px;
+  border-radius: 10px;
+}
+.dropDownButton{
+  background-color: #172a3a;
+  color: #51e5ff;
+  padding: 2px;
+  box-shadow: 0px 0px 2px #51e5ff;
+  margin-left: 5px;
+  border-radius: 8px;
 }
 .reset{
-  margin: 33.3%;
-  padding: 5px;
-  
+  width: 80%;
+  margin: 5px 10%;
+  padding: 5px; 
 }
 
 .invisible {

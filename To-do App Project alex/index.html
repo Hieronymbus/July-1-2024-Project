@@ -14,7 +14,9 @@
                 <p id="tasksTracker"> 0 active tasks</p>
             </div>
             <h1 class="main-title">To Do List</h1>
-            <img id="filterMenuButton" class="filterMenuDropDown" src="assets/setting.png" alt="Settings Icon">    
+            <button id="filterMenuButton" class="filterMenuDropDown">
+                <img src="assets/setting.png" alt="Settings Icon">    
+            </button>
         </header>
         <section id="mainSectionList" class="main-cont">
             <div class="input-group">
@@ -29,22 +31,22 @@
             <div class="filters">
                 <h2>Sort</h2>
                 <h3>- Alphabeticaly</h3>
-                <button id="sortAZButton">Sort A-Z</button>
-                <button id="sortZAButton">Sort Z-A</button>
+                <button id="sortAZButton" class="dropDownButton">Sort A-Z</button>
+                <button id="sortZAButton" class="dropDownButton">Sort Z-A</button>
                 <h3>- Date of Creation</h3>
-                <button id="sortDateButtonNewOld">Sort New-Old</button>
-                <button id="sortDateButtonOldNew">Sort Old-New</button>
+                <button id="sortDateButtonNewOld" class="dropDownButton">Sort New-Old</button>
+                <button id="sortDateButtonOldNew" class="dropDownButton">Sort Old-New</button>
             </div>
             <div class="filters">
                 <h2>Search</h2>
                 <h3>- Search by title</h3>
-                <input id="inputSearchTitle" type="text">
-                <button id="buttonSearchTitle">Search</button>
+                <input id="inputSearchTitle" class="dropDownInput" type="text">
+                <button id="buttonSearchTitle" class="dropDownButton">Search</button>
                 <h3>- Search by date</h3>
-                <input id="inputSearchDate" type="date">
-                <button id="buttonSearchDate">Search</button>
+                <input id="inputSearchDate" class="dropDownInput" type="date">
+                <button id="buttonSearchDate" class="dropDownButton">Search</button>
             </div>
-            <button id="buttonReset" class="reset">RESET</button>
+            <button id="buttonReset" class="reset dropDownButton">RESET FILTERS</button>
         </div> 
 </body>
 </html>
