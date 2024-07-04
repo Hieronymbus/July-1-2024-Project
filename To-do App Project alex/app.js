@@ -113,7 +113,11 @@ function handleDeleteListItem(event){
 function handleEditListItem(event){
     let thisTask = event.target.closest("div").parentElement.children[0].children[0].children[1]
     let theText = thisTask.textContent
-    thisTask.innerHTML = `<input id="taskEditor" class="task-editor" value="${theText}"><button onclick="handleEditPrint()">Finish Edit</button>`
+    thisTask.innerHTML = 
+                        `
+                        <textarea id="taskEditor" class="task-editor">${theText}</textarea>
+                        <button onclick="handleEditPrint()">Finish Edit</button>
+                        `
     
     let editButtons = document.querySelectorAll(".editButton")
     editButtons.forEach(button=>{

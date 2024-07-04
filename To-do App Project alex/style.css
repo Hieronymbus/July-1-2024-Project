@@ -80,24 +80,28 @@
 #todo-form {
   width: 100%;
 }
-
-.input-group input {
+.input-title {
+  padding: 12px;
+  background-color: #51e5ff;
+  border: none;
+  border-radius: 10px;
+  width: 50%;
+}
+.input-task {
   padding: 12px;
   background-color: #51e5ff;
   border: none;
   border-radius: 10px;
   width: 100%;
 }
-.input-title{
-  width: 20%;
-}
+
 .task-editor{
   padding: 12px;
   background-color: #51e5ff;
   border: none;
   border-radius: 10px;
   width: 100%;
-  
+  height: fit-content;
 }
 strong {
  font-size: 20px;
