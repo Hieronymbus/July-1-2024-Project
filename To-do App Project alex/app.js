@@ -128,19 +128,20 @@ function handleEditPrint(event){
     event = event || window.event;
     let thisTask = event.target.closest("div").parentElement.children[0].children[0].children[1]
     let editedText = document.querySelector("#taskEditor");
+
+    let idToFind = event.target.closest("div").parentElement.id
+    let taskInArrayIndex = tasksArr.findIndex(task => task.id === parseInt(idToFind))
+    tasksArr[taskInArrayIndex].taskItself = editedText.value
+    console.log(tasksArr[taskInArrayIndex])
+
     thisTask.innerHTML = `<span>${editedText.value}</span>`;
-    
+
+    // to stop clicking edit button twice which deletes edit text value and replaces it with the text of button "finish edit"
     let editButtons = document.querySelectorAll(".editButton")
     editButtons.forEach(button=>{
         button.onclick = handleEditListItem
     });
-    //update array value of task, broken need fix
-    let idToFind = event.target.closest("div").parentElement.id
-    let taskInArrayIndex = tasksArr.findIndex(task => task.id === parseInt(idToFind))
-    tasksArr[taskInArrayIndex].taskItself == editedText.value
-    console.log(tasksArr[taskInArrayIndex])
-
-
+    
     // cannot edit two seperate notes at same time.
     // unles you begin edit, then create a new note and click edit on the new note.
     // if you do this now you can edit both. 
@@ -250,7 +251,7 @@ function handleSearchByDate(){
     });
 };
 
-//reset
+//resetFilters
 
 function handleResetFitlers(){
     
