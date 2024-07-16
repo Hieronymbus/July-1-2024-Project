@@ -84,10 +84,14 @@ function updateHTML(task){
 function loadTasks() {
     const savedTasks = JSON.parse(localStorage.getItem('tasksArr'));
     if (savedTasks) {
-        tasksArr = savedTasks;
+        tasksArr = savedTasks.map(task => ({
+            ...task,
+            dateCreated: new Date(task.dateCreated) // Convert back to Date object
+        }));
         tasksArr.forEach(task => updateHTML(task));
         tasksTracker.textContent = `${tasksArr.length} Active tasks`;
     }
+
     const savedTaskIdCounter = localStorage.getItem('taskIdCounter');
     if (savedTaskIdCounter) {
         taskIdCounter = parseInt(savedTaskIdCounter, 10);
@@ -156,7 +160,7 @@ function handleEditPrint(event){
     let taskInArrayIndex = tasksArr.findIndex(task => task.id === parseInt(idToFind))
     tasksArr[taskInArrayIndex].taskItself = editedText.value
     console.log(tasksArr[taskInArrayIndex])
-
+    saveTasks()
     thisTask.innerHTML = `<span>${editedText.value}</span>`;
 
     //below: to stop clicking edit button twice which deletes edit text value and replaces it with the text of button "finish edit"
@@ -199,7 +203,6 @@ function handleSortAlphabeticalyAZ(){
         updateHTML(task) 
     });
 };
-
 function handleSortAlphabeticalyZA(){
     let toSortArr = [...tasksArr];
     listItemsContainer.innerHTML = "";
@@ -224,7 +227,7 @@ function handleSortByDateNewOld(){
     let tempArr = [...tasksArr];
     listItemsContainer.innerHTML = "";
     tempArr.sort((a,b)=> {
-        return a.dateCreated - b.dateCreated;
+        return new Date(a.dateCreated) - new Date(b.dateCreated);
     });
     tempArr.forEach((task)=>{
         updateHTML(task) 
@@ -235,7 +238,7 @@ function handleSortByDateOldNew(){
     let tempArr = [...tasksArr];
     listItemsContainer.innerHTML = "";
     tempArr.sort((a,b)=>{
-        return b.dateCreated - a.dateCreated;
+        return new Date(b.dateCreated) - new Date(a.dateCreated);
     });
     tempArr.forEach((task)=>{
         updateHTML(task) 
