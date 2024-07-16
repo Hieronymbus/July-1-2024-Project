@@ -174,8 +174,7 @@ function handleEditPrint(event){
     // if you do this now you can edit both. 
     // but if you click on finish edit for one of them, 
     // and then click on edit note again on the one still being edited it fills in finish edit for some reason
-    // clicking delete on another task reloads dom and wipes any edits if you havent finished them
-    
+    // clicking delete on another task reloads dom and wipes any edits if you havent finished them   
 };
 
 ///Filter Functions///
