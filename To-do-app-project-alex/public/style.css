@@ -46,10 +46,6 @@ p{
   width: fit-content;
   border-radius: 50%;
 }
-.theTask{
-  word-wrap: break-word; 
-  word-break: break-all;
-}
 .list-group {
   padding: 15px;
   border: 1px solid #51e5ff;

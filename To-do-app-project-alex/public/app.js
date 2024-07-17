@@ -248,7 +248,7 @@ function handleSortByDateOldNew(){
 
 function handleSearchByTitle(){
     console.log("test");
-    let taskSearchedForArr = tasksArr.filter(task => task.taskTitle.toLowerCase() === searchTitleInput.value.toLowerCase());
+    let taskSearchedForArr = tasksArr.filter(task => task.taskTitle.toLowerCase().trim() === searchTitleInput.value.toLowerCase().trim());
     listItemsContainer.innerHTML = "";
     taskSearchedForArr.forEach((task)=>{
         updateHTML(task) 
@@ -284,5 +284,7 @@ function handleResetFitlers(){
     tasksArr.forEach((task)=>{
         updateHTML(task) 
     });
+    searchTitleInput.value = ""
+    searchDateInput.value = ""
 };
 
